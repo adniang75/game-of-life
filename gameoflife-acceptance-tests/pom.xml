@@ -13,7 +13,7 @@
         <jetty.stop.port>9999</jetty.stop.port>
         <webdriver.base.url>http://localhost:${jetty.port}</webdriver.base.url>
         <webdriver.driver>firefox</webdriver.driver>
-        <thucydides.version>0.9.268</thucydides.version>
+        <thucydides.version>0.9.275</thucydides.version>
     </properties>
     <dependencies>
         <dependency>
@@ -37,31 +37,31 @@
         <dependency>
             <groupId>com.googlecode.lambdaj</groupId>
             <artifactId>lambdaj</artifactId>
-            <version>2.3.1</version>
+            <version>2.3.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <version>1.8.2</version>
+            <version>2.5.7</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.6.1</version>
+            <version>1.7.26</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.6.1</version>
+            <version>1.7.26</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.9</version>
+            <version>8.0.16</version>
         </dependency>
     </dependencies>
     <build>
@@ -69,14 +69,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.9</version>
+                <version>3.0.0-M3</version>
                 <configuration>
+                    <argLine>--illegal-access=permit</argLine>
                     <skip>false</skip>
                 </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.10</version>
+                <version>3.0.0-M3</version>
                 <executions>
                     <execution>
                         <id>integration-tests</id>
